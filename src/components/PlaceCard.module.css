@@ -1,0 +1,111 @@
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+    /* Entry animation */
+    animation: scaleIn 0.5s ease-out backwards;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow), var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.imageWrapper {
+    position: relative;
+    height: 220px;
+    background-color: var(--surface-highlight);
+    overflow: hidden;
+}
+
+.placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--surface-highlight), var(--surface));
+    color: var(--muted);
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+.rating {
+    margin-bottom: 1.25rem;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    background: rgba(245, 158, 11, 0.1);
+    /* Low opacity amber */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    display: inline-block;
+    align-self: flex-start;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--primary);
+    color: #0f172a;
+    /* Dark text on bright button */
+    padding: 0.875rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: auto;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+}
+
+.link:hover {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary) !important;
+    /* Force visibility overrides global a:hover */
+    text-shadow: none;
+    transform: none;
+    /* No movement for strict boxy feel */
+    box-shadow: none;
+}
